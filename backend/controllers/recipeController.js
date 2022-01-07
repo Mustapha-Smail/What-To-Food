@@ -6,6 +6,9 @@ import Recipe from '../models/Recipe.js'
 const getRecipes = async (req, res) => {
     const recipes = await Recipe.find({})
 
+    // Get a random recipe
+    const randomRecipe = await Recipe.aggregate([{ $sample: { size:1 }}])
+
     res.json(recipes)
 }
 

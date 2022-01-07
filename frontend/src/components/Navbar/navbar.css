@@ -1,0 +1,65 @@
+/* Navbar */
+
+.navbar {
+  min-height: 10vh;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: center;
+
+  background-color: var(--clr-primary);
+  filter: drop-shadow(4px 6px 15px rgba(0, 0, 0, 0.5));
+}
+
+.logo {
+  flex: 0.25;
+}
+
+.nav__list {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.nav__list-item .nav__link {
+  font-family: var(--font-family);
+  font-size: 24px;
+  line-height: 28px;
+
+  color: var(--clr-text);
+}
+
+.auth {
+  display: flex;
+  gap: var(--gap);
+
+  align-items: center;
+}
+
+.auth .login {
+  font-family: var(--font-family);
+  font-size: 18px;
+  line-height: 23px;
+  letter-spacing: 0.05em;
+
+  color: var(--clr-text);
+}
+
+.auth .register {
+  padding: 0.5rem 1rem;
+
+  font-family: var(--font-family);
+  font-size: 20px;
+  letter-spacing: 0.05em;
+
+  background-color: var(--clr-secondary);
+  border-radius: 180px;
+
+  color: #fff;
+}
+
+.auth .register:hover {
+  box-shadow: 0 0 20px 0px rgba(235, 229, 229, 0.35);
+}

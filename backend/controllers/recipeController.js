@@ -5,10 +5,7 @@ import Recipe from '../models/Recipe.js'
 // @access  Public 
 const getRecipes = async (req, res) => {
     const recipes = await Recipe.find({})
-
-    // Get a random recipe
-    const randomRecipe = await Recipe.aggregate([{ $sample: { size:1 }}])
-
+    
     res.json(recipes)
 }
 
@@ -25,5 +22,23 @@ const getRecipeById = async (req, res) => {
     } 
 }
 
+//@desc     Generate a random recipe
+//@route    GET /api/recipes/random
+//@access   Public
+const getRandomRecipe = async (req, res) => {
 
-export { getRecipes, getRecipeById }
+    const randomRecipes = await Recipe.aggregate([{ $sample: { size:1 }}])
+
+    const randomRecipe = randomRecipes[0]
+
+    if (randomRecipe) {
+        res.json({
+            id: randomRecipe._id
+        })
+    } else {
+        res.status(500)
+        throw new Error('Internal Server Error')
+    }
+}
+
+export { getRecipes, getRecipeById, getRandomRecipe }

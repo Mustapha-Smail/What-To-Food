@@ -1,3 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+
+:root {
+  --font-family: 'Open Sans', sans-serif;
+  --ff-regular: 400;
+  --ff-semi-bold: 600;
+  --ff-bold: 700;
+  --ff-extra-bold: 800;
+
+  --color-primary: #ce7171;
+  --color-secondary: #112a19;
+  --color-tertiary: #25753f;
+  --color-stars-rating: #f6e014;
+
+  --color-text-primary: #080721;
+  --color-text-outline: #ffffff;
+  --color-text-header: #7e8d1d;
+
+  --gap: 2rem;
+}
 /* Box sizing rules */
 *,
 *::before,
@@ -40,6 +60,17 @@ body {
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
+}
+
+a, 
+a:hover,
+a:focus {
+  color: unset; 
+  text-decoration: none; 
+}
+
+li {
+  list-style: none;
 }
 
 /* Make images easier to work with */
@@ -111,4 +142,205 @@ li {
 
 .section__margin {
   margin: 0rem 8.4375rem;
+}
+
+/* Recipe page */
+
+/* Ingredients */
+.recipe__title {
+  font-weight: var(--ff-bold);
+  font-size: 36px;
+  line-height: 49px;
+  letter-spacing: 0.05em;
+}
+
+.recipe__image {
+  min-height: 55vh;
+  max-height: 55vh;
+  width: 100%;
+}
+
+.rating {
+  font-weight: var(--ff-regular);
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.rating > i {
+  color: var(--color-stars-rating);
+}
+
+.recipe__btn {
+  height: 62px;
+  width: 275px;
+  border-radius: 200px;
+
+  border: none;
+  outline: none;
+
+  font-weight: var(--ff-semi-bold);
+  font-size: 36px;
+  line-height: 49px;
+  letter-spacing: 0.05em;
+
+  color: var(--color-text-outline);
+}
+
+.generate-btn {
+  background-color: var(--color-secondary);
+}
+
+.save-btn {
+  background-color: var(--color-tertiary);
+}
+
+.cooking-time__header {
+  font-weight: var(--ff-semi-bold);
+  font-size: 24px;
+  line-height: 33px;
+
+  letter-spacing: 0.05em;
+}
+
+.cooking-time__text {
+  font-weight: var(--ff-regular);
+  font-size: 18px;
+  line-height: 25px;
+
+  letter-spacing: 0.05em;
+}
+
+.card__ingredients {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 1.3575rem 2.4375rem;
+  border-radius: 50px;
+
+  background: #fffaf7;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.card__ingredients-header {
+  font-weight: var(--ff-semi-bold);
+  font-size: 36px;
+  line-height: 150%;
+  /* or 54px */
+}
+
+.card__ingredients-body {
+  font-weight: var(--ff-bold);
+  font-size: 24px;
+  line-height: 150%;
+  /* or 36px */
+}
+
+.card__ingredients-body > li {
+  list-style: inside;
+}
+
+.btn-more {
+  padding: 0.5rem 1.5rem;
+  border-radius: 200px;
+  border: none;
+  outline: none;
+
+  background: var(--color-tertiary);
+  color: var(--color-text-outline);
+  font-weight: var(--ff-regular);
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.instructions {
+  border-radius: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px -4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.instructions__header {
+  font-weight: var(--ff-semi-bold);
+  font-size: 36px;
+  line-height: 49px;
+  letter-spacing: 0.05em;
+}
+
+.instructions__content > li {
+  padding: 0.8rem 0;
+  list-style: inside;
+  font-weight: var(--ff-regular);
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.05em;
+}
+
+@media screen and (max-width: 1024px) {
+  .section__padding {
+    padding: 1.5rem 4.375rem;
+  }
+
+  .section__margin {
+    margin: 1.5rem 4.375rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section__padding {
+    padding: 1rem 2.1875rem;
+  }
+
+  .section__margin {
+    margin: 1rem 2.1875rem;
+  }
+
+  /* Navbar */
+  .nav {
+    max-height: 5vh;
+  }
+
+  .logo {
+    /* flex: 0.1;  */
+    max-width: 80px;
+  }
+
+  .nav__list,
+  .auth {
+    display: none;
+  }
+
+  .nav-mobile {
+    display: flex;
+    transition: all 1s;
+  }
+}
+
+.slide-bottom {
+  -webkit-animation: slide-bottom 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-bottom 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+  }
+}
+@keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+  }
 }

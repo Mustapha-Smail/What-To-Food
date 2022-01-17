@@ -2,7 +2,7 @@
 
 .header {
   min-height: 90vh;
-  background: url('../../images/header-image.jpg') no-repeat center center/cover;
+  /* background: url('images/header-image.jpg') no-repeat center center/cover; */
   display: flex;
   justify-content: center;
   align-items: center;

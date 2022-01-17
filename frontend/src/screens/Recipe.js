@@ -4,7 +4,6 @@ import axios from 'axios'
 
 import { Navbar } from '../components'
 
-import image from '../images/Image.png'
 
 const Recipe = () => {
 
@@ -31,7 +30,7 @@ const Recipe = () => {
                     <div className="col-md-8">
                         <div className="row mb-3">
                             <div className="col-12">
-                                <img src={image} alt="recipe image" className="recipe__image" />
+                                <img src="image.png" alt="recipe image" className="recipe__image" />
                             </div>
                         </div>
                         <div className="row">

@@ -1,0 +1,189 @@
+/* Recipe page */
+
+/* Ingredients */
+.recipe__title {
+  font-weight: var(--ff-bold);
+  font-size: 36px;
+  line-height: 49px;
+  letter-spacing: 0.05em;
+}
+
+.recipe__image {
+  min-height: 55vh;
+  max-height: 55vh;
+  width: 100%;
+}
+
+.rating {
+  font-weight: var(--ff-regular);
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.rating > i {
+  color: var(--color-stars-rating);
+}
+
+.recipe__btn {
+  height: 62px;
+  width: 275px;
+  border-radius: 200px;
+
+  border: none;
+  outline: none;
+
+  font-weight: var(--ff-semi-bold);
+  font-size: 36px;
+  line-height: 49px;
+  letter-spacing: 0.05em;
+
+  color: var(--color-text-outline);
+}
+
+.generate-btn {
+  background-color: var(--color-secondary);
+}
+
+.save-btn {
+  background-color: var(--color-tertiary);
+}
+
+.cooking-time__header {
+  font-weight: var(--ff-semi-bold);
+  font-size: 24px;
+  line-height: 33px;
+
+  letter-spacing: 0.05em;
+}
+
+.cooking-time__text {
+  font-weight: var(--ff-regular);
+  font-size: 18px;
+  line-height: 25px;
+
+  letter-spacing: 0.05em;
+}
+
+.card__ingredients {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 1.3575rem 2.4375rem;
+  border-radius: 50px;
+
+  background: #fffaf7;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.card__ingredients-header {
+  font-weight: var(--ff-semi-bold);
+  font-size: 36px;
+  line-height: 150%;
+  /* or 54px */
+}
+
+.card__ingredients-body {
+  font-weight: var(--ff-bold);
+  font-size: 24px;
+  line-height: 150%;
+  padding: 0; 
+  /* or 36px */
+}
+
+.card__ingredients-body > li {
+  list-style: inside;
+
+}
+
+.btn-more {
+  padding: 0.5rem 1.5rem;
+  border-radius: 200px;
+  border: none;
+  outline: none;
+
+  background: var(--color-tertiary);
+  color: var(--color-text-outline);
+  font-weight: var(--ff-regular);
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.instructions {
+  border-radius: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px -4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.instructions__header {
+  font-weight: var(--ff-semi-bold);
+  font-size: 36px;
+  line-height: 49px;
+  letter-spacing: 0.05em;
+}
+
+.instructions__content > li {
+  padding: 0.8rem 0;
+  list-style: inside;
+  font-weight: var(--ff-regular);
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.05em;
+}
+
+/* Reviews section */
+.add-review__plus {
+  color: var(--color-secondary);
+  cursor: pointer;
+}
+
+.review-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: #f0f0f0;
+  padding: 0.2rem 1rem;
+}
+
+.review-input:focus {
+  outline: none;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.card__review-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__review {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px -4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  width: 250px;
+  min-height: 300px;
+  padding: 1rem 1.5rem;
+}
+
+.card__review-header {
+  font-weight: var(--ff-semi-bold);
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.card__review-body .card__review-text {
+  font-weight: var(--ff-regular);
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+
+  margin-top: 0.8rem;
+}

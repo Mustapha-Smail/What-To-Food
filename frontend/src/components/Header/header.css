@@ -77,3 +77,69 @@
   outline: none;
   cursor: pointer;
 }
+
+
+@media screen and (max-width: 1024px) {
+
+  /* Header */
+  .header-section__content {
+    width: 75%;
+    padding: auto 1rem;
+  }
+
+  .header-section__content-text p:first-child {
+    font-size: 24px;
+  }
+
+  .header-section__content-text .header-section__headline {
+    font-size: 48px;
+    line-height: 49px;
+  }
+
+  .header-section__content-text p:last-child {
+    font-size: 20px;
+  }
+
+  .header-section__content .generate-btn {
+    padding: 1rem 1.5rem;
+
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  /* Header */
+  .header-section__content {
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .header-section__content-text p:first-child,
+  .header-section__content-text .header-section__headline,
+  .header-section__content-text p:last-child {
+    text-align: center;
+  }
+
+  .header-section__content-text p:first-child {
+    font-size: 24px;
+  }
+
+  .header-section__content-text .header-section__headline {
+    font-size: 36px;
+    line-height: 49px;
+  }
+
+  .header-section__content-text p:last-child {
+    font-size: 18px;
+  }
+
+  .header-section__content .generate-btn {
+    padding: 1rem 1.5rem;
+
+    font-size: 24px;
+    line-height: 28px;
+  }
+}

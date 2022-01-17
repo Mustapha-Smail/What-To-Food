@@ -4,12 +4,10 @@ import { Navbar, Header } from '../components'
 
 const Home = () => {
     return (
-        <>
+        <header className="header">
             <Navbar />
-            <main className="main">
-                <Header />
-            </main>
-        </>
+            <Header />
+        </header>
     )
 }
 

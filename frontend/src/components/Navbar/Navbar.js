@@ -7,7 +7,7 @@ const Navbar = () => {
     const [toggleMenu, setToggleMenu] = useState(false);
 
     return (
-        <nav className="nav section__padding">
+        <nav className="navigation section__padding">
             <div className="logo">
                 <a href="#home" className="logo__link">
                     <img src="/images/logo.svg" alt="logo" className="logo__image" />

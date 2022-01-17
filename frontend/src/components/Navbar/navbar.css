@@ -1,7 +1,7 @@
 /* Navbar */
 
 .nav {
-  min-height: 7vh;
+  height: 10vh;
 
   display: flex;
   justify-content: space-between;
@@ -98,7 +98,7 @@
   width: 100%;
   min-height: 300px;
   right: 0;
-  /* top: 65px; */
+  top: -8px;
 
   border-radius: 0px 0px 20px 20px;
   background-color: var(--color-primary);

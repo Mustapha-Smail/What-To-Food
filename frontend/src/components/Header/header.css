@@ -1,19 +1,17 @@
-/* Main */
-
-.header {
-  min-height: 90vh;
-  /* background: url('images/header-image.jpg') no-repeat center center/cover; */
+/* Header */
+.header-section {
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.header__content {
+.header-section__content {
   background: rgb(218, 190, 190, 0.75);
   border-radius: 60px;
 
-  width: 50%;
-  min-height: 50vh;
+  width: 65%;
+  min-height: 55vh;
 
   display: flex;
   flex-direction: column;
@@ -21,35 +19,39 @@
   justify-content: space-evenly;
 }
 
-.header__content .header__content-text {
+.header-section__content-text {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   gap: 0.2rem;
+
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  text-align: center; 
 }
 
-.header__content-text p:first-child {
+.header-section__content-text p:first-child {
   font-family: var(--font-family);
+  font-weight: var(--ff-semi-bold);
   font-size: 28px;
   line-height: 36px;
   letter-spacing: 0.05em;
-
-  color: var(--clr-text);
 }
 
-.header__content-text .header__headline {
+.header-section__content-text .header-section__headline {
   font-family: var(--font-family);
-  font-weight: 900;
+  font-weight: var(--ff-extra-bold);
   font-size: 56px;
   line-height: 75px;
   letter-spacing: 0.05em;
 
-  color: #c47a0b;
+  color: var(--color-text-header);
 }
 
-.header__content-text p:last-child {
+.header-section__content-text p:last-child {
   font-family: var(--font-family);
+  font-weight: var(--ff-regular);
   font-size: 20px;
   line-height: 24px;
   letter-spacing: 0.05em;
@@ -57,20 +59,21 @@
   color: var(--clr-text);
 }
 
-.header__content .generate-btn {
+.header-section__content .generate-btn {
   padding: 1.5rem 3rem;
 
-  background-color: var(--clr-secondary);
+  background-color: var(--color-secondary);
   border-radius: 200px;
 
   font-family: var(--font-family);
-  font-weight: bold;
+  font-weight: var(--ff-bold);
   font-size: 28px;
   line-height: 36px;
   letter-spacing: 0.05em;
 
-  color: #ffffff;
+  color: var(--color-text-outline);
 
   border: none;
   outline: none;
+  cursor: pointer;
 }

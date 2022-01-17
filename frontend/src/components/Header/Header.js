@@ -21,11 +21,11 @@ const Header = () => {
     }
 
     return (
-        <section className="header section__padding">
-            <div className="header__content">
-                <div className="header__content-text">
+        <section className="header-section section__padding">
+            <div className="header-section__content">
+                <div className="header-section__content-text">
                     <p>Don’t know</p>
-                    <h1 className="header__headline">WHAT TO FOOD ?</h1>
+                    <h1 className="header-section__headline">WHAT TO FOOD ?</h1>
                     <p>Get a random recipe and start cooking 😉</p>
                 </div>
                 <button 

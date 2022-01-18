@@ -15,7 +15,7 @@ const Navbar = () => {
             </div>
 
             <ul className="nav__list">
-                <li className="nav__list-item scale"><a href="#home" className="nav__link">Home</a></li>
+                <li className="nav__list-item scale"><a href="/" className="nav__link">Home</a></li>
                 <li className="nav__list-item scale"><a href="#about" className="nav__link">About us</a></li>
                 <li className="nav__list-item scale"><a href="#contact" className="nav__link">Contact us</a></li>
             </ul>
@@ -37,7 +37,7 @@ const Navbar = () => {
                 {toggleMenu && (
                     <div className="nav-mobile__content slide-bottom" id="mobile-content">
                         <ul className="nav-mobile__list">
-                            <li className="nav__list-item scale"><a href="#home" className="nav__link">Home</a></li>
+                            <li className="nav__list-item scale"><a href="/" className="nav__link">Home</a></li>
                             <li className="nav__list-item scale"><a href="#about" className="nav__link">About us</a></li>
                             <li className="nav__list-item scale"><a href="#contact" className="nav__link">Contact us</a></li>
                         </ul>

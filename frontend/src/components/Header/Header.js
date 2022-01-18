@@ -12,7 +12,7 @@ const Header = () => {
     const generateRecipe = async () => {
         try {
             const { data } = await axios.get('/api/recipes/random')
-
+            console.log(data)
             navigate(`/recipe/${data.id}`)
             
         } catch (error) {

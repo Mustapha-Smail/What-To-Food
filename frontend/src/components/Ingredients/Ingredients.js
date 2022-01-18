@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import './ingredients.css'
 
 
 const Ingredients = ({ingredientsList}) => {
@@ -19,8 +19,8 @@ const Ingredients = ({ingredientsList}) => {
         <div className="card__ingredients">
         <h3 className="card__ingredients-header">Ingredients:</h3>
         <ul className="card__ingredients-body">
-            {getRenderedItems().map(item => (
-                <li>{item}</li>
+            {getRenderedItems().map((item, index) => (
+                <li key={index}>{item}</li>
             ))}
         </ul>
         <div className="card__ingredients-footer d-flex justify-content-end">

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 import './header.css'
-import { Message } from '..'
+import { Footer, Message } from '..'
 
 
 const Header = () => {
@@ -28,28 +28,31 @@ const Header = () => {
     }
 
     return (
-        <section className="header-section section__padding">
-            <div className="header-section__content">
-                <div className="header-section__content-text">
-                    <p>Don’t know</p>
-                    <h1 className="header-section__headline">WHAT TO FOOD ?</h1>
-                    <p>Get a random recipe and start cooking 😉</p>
-                </div>
-                
-                {error && (
-                    <Message variant='danger' >
-                        {error}
-                    </Message>
-                )}
+        <>
+            <section className="header-section section__padding">
+                <div className="header-section__content">
+                    <div className="header-section__content-text">
+                        <p>Don’t know</p>
+                        <h1 className="header-section__headline">WHAT TO FOOD ?</h1>
+                        <p>Get a random recipe and start cooking 😉</p>
+                    </div>
+                    
+                    {error && (
+                        <Message variant='danger' >
+                            {error}
+                        </Message>
+                    )}
 
-                <button 
-                    className="btn generate-btn scale"
-                    onClick={generateRecipe}
-                >
-                    GENERATE
-                </button>
-            </div>
-        </section>
+                    <button 
+                        className="btn generate-btn scale"
+                        onClick={generateRecipe}
+                    >
+                        GENERATE
+                    </button>
+                </div>
+            </section>
+            <Footer />
+        </>
     )
 }
 

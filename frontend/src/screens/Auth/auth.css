@@ -1,0 +1,14 @@
+.btn-more {
+  padding: 0.5rem 1.5rem;
+  border-radius: 200px;
+  border: none;
+  outline: none;
+
+  background: var(--color-tertiary);
+  color: var(--color-text-outline);
+  font-weight: var(--ff-regular);
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: 0.05em;
+}

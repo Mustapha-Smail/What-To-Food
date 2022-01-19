@@ -1,11 +1,11 @@
 import dotenv from 'dotenv'
 import express from 'express'
 import cors from 'cors'
-import axios from 'axios'
 
 import { notFound, errorHandler } from './middleware/errorMiddleware.js'
 import connectDB from './config/db.js'
 import recipeRoutes from './routes/recipeRoutes.js'
+import userRoutes from './routes/userRoutes.js'
 
 dotenv.config()
 
@@ -17,6 +17,7 @@ app.use(cors())
 connectDB()
 
 app.use('/api/recipes', recipeRoutes)
+app.use('/api/users', userRoutes)
 
 app.use(notFound)
 

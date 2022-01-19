@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { Row, Col } from 'react-bootstrap'
 import axios from 'axios'
 
-import { Ingredients, Navbar, Instructions, CookingTime, Message, Loader } from '../../components'
+import { Ingredients, Navbar, Instructions, CookingTime, Message, Loader, Footer } from '../../components'
 import './recipe.css'
 
 
@@ -137,6 +137,7 @@ const Recipe = () => {
                 </Row>
 
             </main>
+            <Footer />
         </>
     )
 }

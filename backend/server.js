@@ -3,6 +3,7 @@ import express from 'express'
 import cors from 'cors'
 import axios from 'axios'
 
+import { notFound, errorHandler } from './middleware/errorMiddleware.js'
 import connectDB from './config/db.js'
 import recipeRoutes from './routes/recipeRoutes.js'
 
@@ -16,6 +17,10 @@ app.use(cors())
 connectDB()
 
 app.use('/api/recipes', recipeRoutes)
+
+app.use(notFound)
+
+app.use(errorHandler)
 
 const PORT = process.env.PORT || 5000
 

@@ -16,8 +16,8 @@ const Navbar = () => {
 
             <ul className="nav__list">
                 <li className="nav__list-item scale"><a href="/" className="nav__link">Home</a></li>
-                <li className="nav__list-item scale"><a href="#about" className="nav__link">About us</a></li>
-                <li className="nav__list-item scale"><a href="#contact" className="nav__link">Contact us</a></li>
+                <li className="nav__list-item scale"><a href="/about" className="nav__link">About us</a></li>
+                <li className="nav__list-item scale"><a href="/contact" className="nav__link">Contact us</a></li>
             </ul>
 
             <div className="auth">

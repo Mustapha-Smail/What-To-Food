@@ -1,22 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 import './header.css'
+import { Message } from '..'
 
 
 const Header = () => {
 
     const navigate = useNavigate()
 
+    const [error, setError] = useState(null)
+
     const generateRecipe = async () => {
         try {
             const { data } = await axios.get('/api/recipes/random')
-            console.log(data)
             navigate(`/recipe/${data.id}`)
             
-        } catch (error) {
-            console.error(error)
+        } catch (err) {
+            console.error(err)
+            setError(
+                err.response && err.response.data.message 
+                ? err.response.data.message 
+                : err.message
+            )
         }
     }
 
@@ -28,6 +35,13 @@ const Header = () => {
                     <h1 className="header-section__headline">WHAT TO FOOD ?</h1>
                     <p>Get a random recipe and start cooking 😉</p>
                 </div>
+                
+                {error && (
+                    <Message variant='danger' >
+                        {error}
+                    </Message>
+                )}
+
                 <button 
                     className="btn generate-btn scale"
                     onClick={generateRecipe}

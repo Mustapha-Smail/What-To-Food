@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { Row, Col } from 'react-bootstrap'
 import axios from 'axios'
 
-import { Ingredients, Navbar, Instructions, CookingTime, Message } from '../../components'
+import { Ingredients, Navbar, Instructions, CookingTime, Message, Loader } from '../../components'
 import './recipe.css'
 
 
@@ -13,14 +13,17 @@ const Recipe = () => {
     const params = useParams()
     const [recipe, setRecipe] = useState({})
     const [error, setError] = useState(null)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         const getData = async () => {
             try {
                 const { data } = await axios.get(`/api/recipes/${params.id}`)
                 setRecipe(data)
+                setLoading(false)
             } catch (err) {
                 console.error(err)
+                setLoading(false)
                 setError(
                     err.response && err.response.data.message 
                     ? err.response.data.message 
@@ -47,6 +50,9 @@ const Recipe = () => {
 
         <>
             <Navbar />
+            {loading && (
+                <Loader/>
+            )}
             {error && (
                 <Message variant='danger' >
                     {error}

@@ -1,4 +1,4 @@
-export { default as Navbar } from './Navbar/Navbar'
+export { default as Navbar } from './Navbar/Tete'
 export { default as Header } from './Header/Header'
 export { default as Ingredients } from './Ingredients/Ingredients'
 export { default as Instructions } from './Instructions/Instructions'

@@ -4,7 +4,7 @@
 .recipe__title {
   font-weight: var(--ff-bold);
   font-size: 36px;
-  line-height: 49px;
+  /* line-height: 49px; */
   letter-spacing: 0.05em;
 }
 

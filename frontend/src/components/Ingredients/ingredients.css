@@ -21,8 +21,8 @@
 }
 
 .card__ingredients-body {
-  font-weight: var(--ff-bold);
-  font-size: 24px;
+  font-weight: var(--ff-regular);
+  font-size: 18px;
   line-height: 150%;
   padding: 0;
   /* or 36px */

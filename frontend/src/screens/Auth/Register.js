@@ -68,7 +68,7 @@ const Register = () => {
     return (
         <>
             <Navbar/>
-            <Container className="py-5">
+            <Container className="py-5 section__padding">
                 <Row className="justify-content-md-center">
                     <Col xs={12} md={6}>
                         <h1 className="my-3">Sign Up</h1>
@@ -88,7 +88,7 @@ const Register = () => {
                                     ></Form.Control>
                                 </Form.Group>
                                 <Form.Group controlId='firstname'>
-                                    <Form.Label>first Name</Form.Label>
+                                    <Form.Label>First Name</Form.Label>
                                     <Form.Control 
                                         type='name'
                                         placeholder='Enter first name' 

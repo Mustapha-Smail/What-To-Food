@@ -60,7 +60,7 @@ const Login = () => {
     return (
         <>
             <Navbar/>
-            <Container className="py-5">
+            <Container className="py-5 section__padding">
                 <Row className="justify-content-md-center">
                     <Col xs={12} md={6}>
                         <h1 className="my-3">Sign In</h1>

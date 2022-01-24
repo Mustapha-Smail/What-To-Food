@@ -70,7 +70,7 @@ const Register = () => {
             <Navbar/>
             <Container className="py-5 section__padding">
                 <Row className="justify-content-md-center">
-                    <Col xs={12} md={6}>
+                    <Col xs={12} md={6} className="auth-container p-5">
                         <h1 className="my-3">Sign Up</h1>
                         {error && <Message variant='danger'>{error}</Message>}
                         {message && <Message variant='danger'>{message}</Message>}

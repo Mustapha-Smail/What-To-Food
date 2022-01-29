@@ -13,7 +13,11 @@ const Recipe = () => {
     const params = useParams()
     const [recipe, setRecipe] = useState({})
     const [error, setError] = useState(null)
+    const [message, setMessage] = useState(null)
     const [loading, setLoading] = useState(true)
+
+    const userInfoFromStorage = JSON.parse(localStorage.getItem('userInfo'))
+
 
     useEffect(() => {
         const getData = async () => {
@@ -31,9 +35,8 @@ const Recipe = () => {
                 )
             }
         }
-
         getData()
-    }, [params.id])
+    }, [params, params.id, userInfoFromStorage])
 
     const generateRecipe = async () => {
         try {
@@ -41,9 +44,42 @@ const Recipe = () => {
             setError(null)
             navigate(`/recipe/${data.id}`)
             
-        } catch (error) {
-            console.error(error)
+        } catch (err) {
+            setError(
+                err.response && err.response.data.message 
+                ? err.response.data.message 
+                : err.message
+            )
         }
+    }
+
+    const saveRecipe = async () => {
+        
+        if(!userInfoFromStorage){
+            navigate(`/login?redirect=/recipe/${params.id}`)
+        }
+
+        console.log(userInfoFromStorage.token)
+
+        try {
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json', 
+                    Authorization: `Bearer ${userInfoFromStorage.token}`
+                }
+            }
+            // BUG TO FIX add headers in axios post => doesn't work without passing params also 
+            const { data } = await axios.post(`/api/users/save/${params.id}`, config ,config)
+            setMessage(data.message)
+
+        } catch (err) {
+            setError(
+                err.response && err.response.data.message 
+                ? err.response.data.message 
+                : err.message
+            )
+        }
+
     }
 
     return (
@@ -56,6 +92,11 @@ const Recipe = () => {
             {error && (
                 <Message variant='danger' >
                     {error}
+                </Message>
+            )}
+            {message && (
+                <Message variant='success' >
+                    {message}
                 </Message>
             )}
             <main className="section__padding py-3">
@@ -96,7 +137,10 @@ const Recipe = () => {
                                 </button>
                             </Col>
                             <Col md={6} className="my-2 d-flex justify-content-md-end justify-content-center">
-                                <button className="recipe__btn save-btn">
+                                <button 
+                                    className="recipe__btn save-btn"
+                                    onClick={saveRecipe}
+                                >
                                     SAVE
                                 </button>
                             </Col>

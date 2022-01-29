@@ -27,7 +27,7 @@ const Tete = () => {
         navigate(0)
     }
 
-    const accountIcon = (<i class="fas fa-user-circle"></i>)
+    const accountIcon = (<i className="fas fa-user-circle"></i>)
 
     return (
         <Navbar expand="lg" collapseOnSelect>

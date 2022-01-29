@@ -1,6 +1,7 @@
 import asyncHandler from 'express-async-handler'
 import generateToken from '../utils/generateToken.js'
 import User from '../models/User.js'
+import Recipe from '../models/Recipe.js'
 
 // @desc    Auth user & get token  
 // @route   POST /api/users/login
@@ -18,6 +19,7 @@ const authUser = asyncHandler(async (req, res) => {
             lastName: user.lastName, 
             firstName: user.firstName, 
             email: user.email,
+            recipes: user.recipes,
             isAdmin: user.isAdmin, 
             token: generateToken(user._id),  
         })
@@ -54,6 +56,7 @@ const registerUser = asyncHandler(async (req, res) => {
             lastName: user.lastName, 
             firstName: user.firstName, 
             email: user.email,
+            recipes: user.recipes,
             isAdmin: user.isAdmin, 
             token: generateToken(user._id),  
         })
@@ -115,9 +118,37 @@ const updateUserProfile = asyncHandler(async (req, res) => {
     }
 })
 
+// @desc    Save a liked Recipe  
+// @route   POST /api/users/save/:id
+// @access  Private 
+const saveRecipe = asyncHandler(async (req, res) => {
+    const user = await User.findById(req.user._id)
+
+    if (user) {
+        const recipe = await Recipe.findById(req.params.id)
+        
+        if (recipe && !user.recipes.includes(recipe._id)) {
+            
+            user.recipes.push(recipe._id)
+
+            const savedUser = user.save()
+            res.json({message: 'Recipe successfully added!'})
+
+        } else {
+            res.status(404)
+            throw new Error('Recipe already saved')
+        }
+
+    } else {
+        res.status(404)
+        throw new Error('User not found')
+    }
+})
+
 export {
     authUser, 
     registerUser, 
     getUserProfile, 
     updateUserProfile, 
+    saveRecipe, 
 }
